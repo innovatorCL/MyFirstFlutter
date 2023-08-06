@@ -5,6 +5,8 @@ import 'package:myfirstflutter/constraints_page.dart' deferred as constraints_pa
 import 'package:myfirstflutter/linear_page.dart' deferred as linear_page;
 import 'package:myfirstflutter/richtext_page.dart' deferred as richtext_page;
 import 'package:myfirstflutter/button_page.dart' deferred as button_page;
+import 'package:myfirstflutter/listview_page.dart' deferred as listview_page;
+import 'package:myfirstflutter/scrollview_page.dart' deferred as scrollview_page;
 
 void main() => runApp(const MyApp());
 
@@ -96,25 +98,23 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // ),
-      body: new Container(
-        child: new ListView.builder(
-          itemBuilder: (context, index) {
-            return new InkWell(
-              onTap: () {
-                Navigator.of(context).pushNamed(routeLists[index]);
-              },
-              child: new Card(
-                child: new Container(
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  height: 50,
-                  child: new Text(routers.keys.toList()[index]),
-                ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(routeLists[index]);
+            },
+            child: Card(
+              child: Container(
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.symmetric(horizontal: 10),
+                height: 50,
+                child: Text(routers.keys.toList()[index]),
               ),
-            );
-          },
-          itemCount: routers.length,
-        ),
+            ),
+          );
+        },
+        itemCount: routers.length,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -259,6 +259,16 @@ Map<String, WidgetBuilder> routers = {
   "按钮": (context) {
     return ContainerAsyncRouterPage(button_page.loadLibrary(), (context) {
       return button_page.ButtonRoute();
+    });
+  },
+  "ListView": (context) {
+    return ContainerAsyncRouterPage(listview_page.loadLibrary(), (context) {
+      return listview_page.ListViewRoute();
+    });
+  },
+  "ScrollView": (context) {
+    return ContainerAsyncRouterPage(scrollview_page.loadLibrary(), (context) {
+      return scrollview_page.CustomScrollViewRoute();
     });
   },
 };
