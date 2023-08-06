@@ -4,7 +4,7 @@ class ImageAndIconRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    var img=AssetImage("imgs/gsy_cat.png");
+    var img = AssetImage("imgs/gsy_cat.png");
     return SingleChildScrollView(
       child: Column(
           children: <Image>[
@@ -14,42 +14,49 @@ class ImageAndIconRoute extends StatelessWidget {
               width: 100.0,
               fit: BoxFit.fill,
             ),
+
             Image(
               image: img,
               width: 100.0,
               height: 50.0,
               fit: BoxFit.cover,
             ),
+
             Image(
               image: img,
               height: 50,
               width: 50.0,
               fit: BoxFit.contain,
             ),
+
             Image(
               image: img,
               width: 100.0,
               height: 50.0,
               fit: BoxFit.fitWidth,
             ),
+
             Image(
               image: img,
               width: 100.0,
               height: 50.0,
               fit: BoxFit.fitHeight,
             ),
+
             Image(
               image: img,
               width: 100.0,
               height: 50.0,
               fit: BoxFit.scaleDown,
             ),
+
             Image(
               image: img,
               height: 50.0,
               width: 100.0,
               fit: BoxFit.none,
             ),
+
             Image(
               image: img,
               width: 100.0,
@@ -57,6 +64,7 @@ class ImageAndIconRoute extends StatelessWidget {
               colorBlendMode: BlendMode.difference,
               fit: BoxFit.fill,
             ),
+
             Image(
               image: img,
               width: 100.0,
@@ -67,14 +75,15 @@ class ImageAndIconRoute extends StatelessWidget {
             return Row(
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: SizedBox(
                     width: 100,
                     child: e,
                   ),
                 ),
+
                 Text(e.fit.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 15.0,
                   height: 1.2,

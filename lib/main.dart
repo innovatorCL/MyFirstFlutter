@@ -4,6 +4,7 @@ import 'package:myfirstflutter/image_route.dart' deferred as image_page;
 import 'package:myfirstflutter/constraints_page.dart' deferred as constraints_page;
 import 'package:myfirstflutter/linear_page.dart' deferred as linear_page;
 import 'package:myfirstflutter/richtext_page.dart' deferred as richtext_page;
+import 'package:myfirstflutter/button_page.dart' deferred as button_page;
 
 void main() => runApp(const MyApp());
 
@@ -254,5 +255,10 @@ Map<String, WidgetBuilder> routers = {
     return ContainerAsyncRouterPage(richtext_page.loadLibrary(), (context) {
       return richtext_page.RichTextRoute();
     });
-  }
+  },
+  "按钮": (context) {
+    return ContainerAsyncRouterPage(button_page.loadLibrary(), (context) {
+      return button_page.ButtonRoute();
+    });
+  },
 };
